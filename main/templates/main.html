@@ -1,6 +1,22 @@
-<h1>Sasana Orchid Nursery 🌸</h1>
+<h1>🌸Sasana Orchid Nursery✨</h1>
+<table border='1'>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Price</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.amount }}</td>
+            <td>{{ item.price }}</td>
+            <td>{{ item.description }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
-<h5>Name: </h5>
-<p>{{name}}</p> 
-<h5>Class: </h5>
-<p>{{class}}</p> 
