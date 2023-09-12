@@ -36,6 +36,9 @@ https://sasana-orchid.adaptable.app/
           ```
      2. Mendaftarkan aplikasi main ke dalam proyek dengan cara menambahkan 'main' ke INSTALLED_APPS di settings.py
 - [x] Melakukan *routing* pada proyek agar dapat menjalankan aplikasi `main`.
+      
+      Saya melakukan routing full mengikuti tutorial-1 PBP, berikut langkah-langkahnya:
+      1. test
 - [x] Membuat model pada aplikasi `main` dengan nama `Item` dan memiliki atribut wajib sebagai berikut.
     - `name` sebagai nama *item* dengan tipe `CharField`.
     - `amount` sebagai jumlah *item* dengan tipe `IntegerField`.
