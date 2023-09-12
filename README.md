@@ -6,7 +6,7 @@ https://sasana-orchid.adaptable.app/
 ## ✅ Implementasi Checklist Tugas ✅
 - [x] Membuat sebuah proyek Django baru
 
-Saya membuat proyek Django full mengikuti tutorial-0 dan tutorial-1 PBP, berikut langkah-langkahnya:
+     Saya membuat proyek Django full mengikuti tutorial-0 dan tutorial-1 PBP, berikut langkah-langkahnya:
 1. Membuat repo github lalu clone ke local
      ```shell
        git clone <URL repo github>
