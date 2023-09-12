@@ -9,8 +9,8 @@ https://sasana-orchid.adaptable.app/
      Saya membuat proyek Django full mengikuti tutorial-0 PBP, berikut langkah-langkahnya:
      1. Membuat repo github lalu clone ke local
         ```shell
-             git clone <URL repo github>
-          ```
+        git clone <URL repo github>
+        ```
      3. Membuat virtual environment
           ```shell
             python -m venv env
