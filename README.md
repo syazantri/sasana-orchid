@@ -5,7 +5,8 @@ https://sasana-orchid.adaptable.app/
 
 ## ✅ Implementasi Checklist Tugas ✅
 - [x] Membuat sebuah proyek Django baru
-- testststssttss
+- Saya membuat proyek Django full mengikuti tutorial-0 dan tutorial-1 PBP, berikut langkah-langkahnya:
+- - testststst
 
 - [x] Membuat aplikasi dengan nama `main` pada proyek tersebut.
 - [x] Melakukan *routing* pada proyek agar dapat menjalankan aplikasi `main`.
