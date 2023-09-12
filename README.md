@@ -1,8 +1,8 @@
 # sasana-orchid 🌸
-## 🔗 Links Adaptable 🔗
+### 🔗 Links Adaptable 🔗
 https://sasana-orchid.adaptable.app/
 
-## ✅ Implementasi Checklist Tugas ✅
+### ✅ Implementasi Checklist Tugas ✅
 - [x] Membuat sebuah proyek Django baru.
 - [x] Membuat aplikasi dengan nama `main` pada proyek tersebut.
 - [x] Melakukan *routing* pada proyek agar dapat menjalankan aplikasi `main`.
@@ -15,8 +15,8 @@ https://sasana-orchid.adaptable.app/
 - [x] Melakukan *deployment* ke Adaptable terhadap aplikasi yang sudah dibuat sehingga nantinya dapat diakses oleh teman-temanmu melalui Internet.
 - [x] Membuat sebuah `README.md` yang berisi tautan menuju aplikasi Adaptable yang sudah di-*deploy*, serta jawaban dari beberapa pertanyaan berikut.
 
-## 📥 Bagan Request Client dan Response 📥
+### 📥 Bagan Request Client dan Response 📥
 
-## 💻 Mengapa Harus Menggunakan Virtual Environment? 💻
+### 💻 Mengapa Harus Menggunakan Virtual Environment? 💻
 
-## ❓ Apa itu MVC, MVT, MVVM? ❓
+### ❓ Apa itu MVC, MVT, MVVM? ❓
