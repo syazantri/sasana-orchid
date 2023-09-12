@@ -6,8 +6,26 @@ https://sasana-orchid.adaptable.app/
 ## ✅ Implementasi Checklist Tugas ✅
 - [x] Membuat sebuah proyek Django baru
 - Saya membuat proyek Django full mengikuti tutorial-0 dan tutorial-1 PBP, berikut langkah-langkahnya:
-    - testststst
-
+  1. Membuat repo github lalu clone ke local
+     ```shell
+       git clone <URL repo github>
+     ```
+  3. Membuat virtual environment
+     ```shell
+       python -m venv env
+     ```
+  4. Menyalakan virtual environment (karena saya menggunakan MacOS jadi begini)
+     ```shell
+       source env/bin/activate
+     ```
+  6. Membuat requirements.txt lalu menginstall dependencynya
+     ```shell
+       pip install -r requirements.txt
+     ```
+  8. Membuat proyek Django (yey done membuat proyek Django 😊)
+     ```shell
+       pip install -r requirements.txt
+     ```
 - [x] Membuat aplikasi dengan nama `main` pada proyek tersebut.
 - [x] Melakukan *routing* pada proyek agar dapat menjalankan aplikasi `main`.
 - [x] Membuat model pada aplikasi `main` dengan nama `Item` dan memiliki atribut wajib sebagai berikut.
