@@ -1,7 +1,6 @@
 from django.shortcuts import render
 
 def show_main(request):
-    # Define a list of product dictionaries
     items = [
         {
             'name': 'Anggrek Dendrobium Alien',
