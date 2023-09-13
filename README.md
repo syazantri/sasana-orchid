@@ -59,8 +59,7 @@ Ketiganya merupakan konsep arsitektur yang digunakan dalam pengembangan web. Ber
 1. MVC (Model-View-Controller)
      
 3. MVT (Model-View-Template)
-
-   Konsep ini adalah konsep yang dipakai untuk tugas PBP kali ini. MVT terdiri dari tiga struktur utama, yaitu:
+Konsep ini adalah konsep yang dipakai untuk tugas PBP kali ini. MVT terdiri dari tiga struktur utama, yaitu:
      - Model: tempat mengatur bagaimana ketentuan setiap variabel data yang akan dipakai
      - View: mengelola model data atau variabel yang telah dibuat dengan fungsi-fungsi
      - Template: berisi html untuk menampilkan hasil dari views ke halaman web
