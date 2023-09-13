@@ -1,6 +1,6 @@
 # Sasana Orchid \(^-^)/ 🌸
 
-## 🔗 Links Adaptable 🔗
+## 🔗 Link Adaptable 🔗
 https://sasana-orchid.adaptable.app/
 
 ## ✅ Implementasi Checklist Tugas ✅
@@ -52,5 +52,8 @@ https://sasana-orchid.adaptable.app/
 ## 📥 Bagan Request Client dan Response 📥
 
 ## 💻 Mengapa Harus Menggunakan Virtual Environment? 💻
+Virtual Environment digunakan dalam mengerjakan tugas ini agar package dan dependency yang dipakai dalam pengerjaan tugas ini tidak bertabrakan dengan package dan dependency yang ada dalam komputer saya. Yang dimaksud dengan bertabrakan adalah misalnya dependencynya berbeda. Misal versi python yaang ingin dipakai di venv (virtual environment) saya adalah 3.9, tetapi yang ada di komputer saya 3.11.
 
 ## ❓ Apa itu MVC, MVT, MVVM? ❓
+MVC ()
+MVT
