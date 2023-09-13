@@ -55,5 +55,7 @@ https://sasana-orchid.adaptable.app/
 Virtual Environment digunakan dalam mengerjakan tugas ini agar package dan dependency yang dipakai dalam pengerjaan tugas ini tidak bertabrakan dengan package dan dependency yang ada dalam komputer saya. Yang dimaksud dengan bertabrakan adalah misalnya dependencynya berbeda. Misal versi python yaang ingin dipakai di venv (virtual environment) saya adalah 3.9, tetapi yang ada di komputer saya 3.11.
 
 ## ❓ Apa itu MVC, MVT, MVVM? ❓
-MVC ()
-MVT
+Ketiganya merupakan konsep arsitektur yang digunakan dalam pengembangan web. Berikut penjelasan dari masing-masing konsep:
+1. MVC (Model-View-Controller)
+2. MVT (Model-View-Template
+3. MVVM (Model
