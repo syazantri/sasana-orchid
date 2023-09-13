@@ -57,13 +57,20 @@ Virtual Environment digunakan dalam mengerjakan tugas ini agar package dan depen
 ## ❓ Apa itu MVC, MVT, MVVM? ❓
 Ketiganya merupakan konsep arsitektur yang digunakan dalam pengembangan web. Berikut penjelasan dari masing-masing konsep:
 1. MVC (Model-View-Controller)
-     
+   #####
+   Bisa digunakan untuk banyak framework
+   - View: membuat fungsi untuk merespon request dengan mengelola model data atau variabel yang telah dibuat dan memberinya ke input controller
+   - Controller: mengakses input user, mengolahnya, lalu mengupdate views dan model
 3. MVT (Model-View-Template)
-   ####
-   Konsep ini adalah konsep yang dipakai untuk tugas PBP kali ini. MVT terdiri dari tiga struktur utama, yaitu:
-     - Model: tempat mengatur bagaimana ketentuan setiap variabel data yang akan dipakai
-     - View: mengelola model data atau variabel yang telah dibuat dengan fungsi-fungsi
+   #####
+   Konsep ini adalah konsep yang dipakai untuk tugas PBP kali ini. MVT biasa digunakan dalam proyek Django, dengan kata lain biasa digunakan dalam bahasa python. Konsep ini terdiri dari tiga struktur utama, yaitu:
+     - Model: tempat mengatur bagaimana ketentuan setiap variabel data yang akan dipakai dan logiicnya
+     - View: membuat fungsi untuk merespon request dengan mengelola model data atau variabel yang telah dibuat
      - Template: berisi html untuk menampilkan hasil dari views ke halaman web
-   MVT biasa digunakan dalam proyek Django,
 5. MVVM (Model-View-ViewModel)
-Perbedaan ketiganya adalah
+   #####
+   Konsep ini cocok dipakai ketika ingin menggunakan dynamic UI, biasa digunakan dalam framework JavaScript seperti Angular
+   - Model: tempat mengatur bagaimana ketentuan setiap variabel data yang akan dipakai dan logicnya
+   - View: mengelola model data atau variabel yang telah dibuat dengan fungsi-fungsi
+   - ViewModel: menyambungkan view dan model
+Perbedaan ketiganya adalah MVT dan MVC biasa digunakan untuk server-side atau backend, sedangkan MVVM biasa digunakan pada client-side atau frontend. MVVM juga mampu memisahkan antara view dan model sehingga mudah dipakai untuk mendesign. Lalu MVC yang tidak memisahkan model dan views membuat kita sulit ketika ingin memodifikasi suatu fitur. Lalu pada MVC, controller menghandle user input, pada MVT, view yang menerima request, lalu pada MVVM, view menerima user input sekaligus menerima request.
