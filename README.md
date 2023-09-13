@@ -68,4 +68,5 @@ Ketiganya merupakan konsep arsitektur yang digunakan dalam pengembangan web. Ber
      - Model: tempat mengatur bagaimana ketentuan setiap variabel data yang akan dipakai dan logicnya
      - View: mengelola model data atau variabel yang telah dibuat dengan fungsi-fungsi
      - ViewModel: menyambungkan view dan model
+#####
 Perbedaan ketiganya adalah MVT dan MVC biasa digunakan untuk server-side atau backend, sedangkan MVVM biasa digunakan pada client-side atau frontend. MVVM juga mampu memisahkan antara view dan model sehingga mudah dipakai untuk mendesign. Lalu MVC yang tidak memisahkan model dan views membuat kita sulit ketika ingin memodifikasi suatu fitur. Lalu pada MVC, controller menghandle user input, pada MVT, view yang menerima request, lalu pada MVVM, view menerima user input sekaligus menerima request.
