@@ -1,4 +1,4 @@
-# Sasana Orchid \(^-^)/ 🌸
+# Sasana Orchid \\(^-^)/ 🌸
 
 ## 🔗 Link Adaptable 🔗
 https://sasana-orchid.adaptable.app/
