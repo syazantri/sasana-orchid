@@ -19,35 +19,42 @@ https://sasana-orchid.adaptable.app/
           ```shell
             source env/bin/activate
           ```
-     5. Membuat requirements.txt lalu menginstall dependencynya
+     5. Membuat file requirements.txt lalu menginstall dependencynya
           ```shell
             pip install -r requirements.txt
           ```
      6. Membuat proyek Django (yey done membuat proyek Django 😊)
           ```shell
-            pip install -r requirements.txt
+            django-admin startproject sasana-orchid .
           ```
 - [x] Membuat aplikasi dengan nama `main` pada proyek tersebut.
 
      Saya membuat aplikasi main full mengikuti tutorial-1 PBP, berikut langkah-langkahnya:
-     1. Membuat app baru bernama name
+     1. Membuat app baru bernama main
          ```shell
             python manage.py startapp main
           ```
      2. Mendaftarkan aplikasi main ke dalam proyek dengan cara menambahkan 'main' ke INSTALLED_APPS di settings.py
 - [x] Melakukan *routing* pada proyek agar dapat menjalankan aplikasi `main`.
       
-     Saya melakukan routing full mengikuti tutorial-1 PBP, berikut langkah-langkahnya:
-     1. Membuat file urls.py dalam main, lalu mengisinya sesuai yang ada di urls.py saya sekarang
-     2. Menambahkan rute URL pada urlpatterns di dalam sasana-orchid agar main bisa diaakses
+     Menambahkan rute URL pada urlpatterns di dalam proyek sasana-orchid agar main bisa diakses (routing tingkat proyek)
 - [x] Membuat model pada aplikasi `main` dengan nama `Item` dan memiliki atribut wajib sebagai berikut.
-    - `name` sebagai nama *item* dengan tipe `CharField`.
+    - `name` sebagai nama *item* dengan tipe `CharField`. 
     - `amount` sebagai jumlah *item* dengan tipe `IntegerField`.
     - `description` sebagai deskripsi *item* dengan tipe `TextField`.
+    - ini tinggal diketik saja di dalam models.py dan sesuaikan kriteria tipe field nya.
 - [x] Membuat sebuah fungsi pada `views.py` untuk dikembalikan ke dalam sebuah *template* HTML yang menampilkan nama aplikasi serta nama dan kelas kamu.
+
+     Buat fungsi di views.py dengaan menyesuaikan model data yang telah dibuat, lalu nanti tinggal dipakaai di template
 - [x] Membuat sebuah *routing* pada `urls.py` aplikasi `main` untuk memetakan fungsi yang telah dibuat pada `views.py`.
+
+     Membuat file urls.py dalam main, lalu mengisi pattern url untuk mengatur routing dalam app main
 - [x] Melakukan *deployment* ke Adaptable terhadap aplikasi yang sudah dibuat sehingga nantinya dapat diakses oleh teman-temanmu melalui Internet.
+
+     Buka adaptable, sign in, create new app, pilih python dan postgre, pilih versi python sesuai versi di venv, lalu tambahkan start command python3 manage.py migrate &&  gunicorn shopping_list.wsgi && sudo apt install python3-pip, terakhir checklist HTTP Listener on PORT.
 - [x] Membuat sebuah `README.md` yang berisi tautan menuju aplikasi Adaptable yang sudah di-*deploy*, serta jawaban dari beberapa pertanyaan berikut.
+
+     Inilah readme saya.
 
 ## 📥 Bagan Request Client dan Response 📥
 ![](/image/bagan.png)
