@@ -57,5 +57,11 @@ Virtual Environment digunakan dalam mengerjakan tugas ini agar package dan depen
 ## ❓ Apa itu MVC, MVT, MVVM? ❓
 Ketiganya merupakan konsep arsitektur yang digunakan dalam pengembangan web. Berikut penjelasan dari masing-masing konsep:
 1. MVC (Model-View-Controller)
-2. MVT (Model-View-Template
-3. MVVM (Model
+     Konsep ini adalah konsep yang dipakai untuk tugas PBP kali ini. MVT terdiri dari tiga struktur utama, yaitu:
+     - Model: tempat mengatur bagaimana ketentuan setiap variabel data yang akan dipakai
+     - View: mengelola model data atau variabel yang telah dibuat dengan fungsi-fungsi
+     - Template: berisi html untuk menampilkan hasil dari views ke halaman web
+     MVT biasa digunakan dalam proyek Django,
+3. MVT (Model-View-Template)
+4. MVVM (Model-View-ViewModel)
+Perbedaan ketiganya adalah
