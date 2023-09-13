@@ -58,7 +58,7 @@ https://sasana-orchid.adaptable.app/
 
 ## 📥 Bagan Request Client dan Response 📥
 ![](/image/bagan.png)
-pertama user mengetik url pada browser sehingga mengirim http request, lalu di urls.py diatur path (routing) yang sesuai. Setelah dapat path yang sesuai, dicari fungsi mana di views.py yang tepat dan dapat mengolah requestannya. Kemudian hasil fungsi views.py akan ditampilkan melalui html yang ada pada template. Html tersebut pada akhirnya akan menjadi response yang dikirim ke user.
+Pertama user mengetik url pada browser sehingga mengirim http request, lalu di urls.py diatur path (routing) yang sesuai. Setelah dapat path yang sesuai, dicari fungsi mana di views.py yang tepat dan dapat mengolah requestannya. Kemudian hasil fungsi views.py akan ditampilkan melalui html yang ada pada template. Html tersebut pada akhirnya akan menjadi response yang dikirim ke user.
 
 ## 💻 Mengapa Harus Menggunakan Virtual Environment? 💻
 Virtual Environment digunakan dalam mengerjakan tugas ini agar package dan dependency yang dipakai dalam pengerjaan tugas ini tidak bertabrakan dengan package dan dependency yang ada dalam komputer saya. Yang dimaksud dengan bertabrakan adalah misalnya dependencynya berbeda. Misal versi python yaang ingin dipakai di venv (virtual environment) saya adalah 3.9, tetapi yang ada di komputer saya 3.11.
