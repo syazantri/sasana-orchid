@@ -8,6 +8,11 @@
 <p>Syazantri Salsabila</p>
 <h3>Class:</h3>
 <p>PBP D</p>
+
+{% if last_item %}
+<h3> Kamu telah menambah stok {{ last_item.name }} sebanyak {{ last_item.amount }} pada toko!😊</h3>
+{% endif %} 
+
 <table border='1'>
     <thead>
         <tr>
@@ -15,6 +20,7 @@
             <th>Amount</th>
             <th>Price</th>
             <th>Description</th>
+            <th>Delete</th>
         </tr>
     </thead>
     <tbody>
@@ -24,8 +30,18 @@
             <td>{{ item.amount }}</td>
             <td>{{ item.price }}</td>
             <td>{{ item.description }}</td>
+            <td>
+                <a href="{% url 'main:delete_item' item.id %}">
+                    <button>Delete</button>
+                </a>
+            </td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
 
+<a href="{% url 'main:create_item' %}">
+    <button>
+        Add New Item
+    </button>
+</a>
