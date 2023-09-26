@@ -3,7 +3,7 @@ from main.models import Item
 
 class MainAppTestCase(TestCase):
     def test_name(self): #test apakah nama sudah sesuai
-        response = self.client.get("/main/")
+        response = self.client.get("")
         self.assertContains(response, "Syazantri Salsabila")
         self.assertContains(response, "PBP D")
         self.assertContains(response, "main")
