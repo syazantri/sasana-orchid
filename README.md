@@ -229,7 +229,7 @@ Perbedaan antara keduanya adalah kepraktisannya dalam mendesign. Bootstrap menye
 ### <samp> 5️⃣ Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 ✅ Kustomisasi desain pada templat HTML yang telah dibuat pada Tugas 4 dengan menggunakan CSS atau CSS framework (seperti Bootstrap, Tailwind, Bulma) dengan ketentuan sebagai berikut
 <br>
-    ~~ Saya menggunakan framework Tailwind, sehingga pertama-tama yang dilakukan adalah menginstall package django-tailwind dengan ```python -m pip install django-tailwind```. Lalu membuat file static isi style.css dan output.css, menambahkan
+    ~~ Saya menggunakan framework Tailwind, sehingga pertama-tama yang dilakukan adalah menginstall package django-tailwind dengan ```python -m pip install django-tailwind```. Lalu membuat file tailwind.config.js dengan command ```npx tailwindcss init```, lalu membuat file static isi style.css yang diisi kode mengimpor tailwind css, dan buat file output.css juga, lalu compile tailwind.
 <br>
 ✅ Kustomisasi halaman login, register, dan tambah inventori semenarik mungkin.
 <br>
