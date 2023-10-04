@@ -188,3 +188,35 @@ Untuk menampilkan detail informasi pengguna sesuai yang lagi log in, itu ubah aj
 Inilah readme saya yeay🥳
 <br>
 </details>
+
+<details>
+    <summary>Tugas 5</summary>
+    
+### <samp> 1️⃣ Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
+Selector pada CSS bermanfaat untuk memilih elemen yang ingin diatur designnya. Ada bermacam-macam contoh element selector css, disesuaikan dengan nama elemen nya, misal p untuk paragraf, h1, h2 untuk header dll. Element selector ini cocok digunakan ketika kita ingin menyeragamkan design suatu elemen. Misal kita ingin semua paragraf warnanya biru, berarti kita element selector p saja seperti ini ``` p {
+  color: blue;
+} ```
+### <samp> 2️⃣ Jelaskan HTML5 Tag yang kamu ketahui.
+HTML5 Tag setahu saya ada banyak sekali, 
+### <samp> 3️⃣ Jelaskan perbedaan antara margin dan padding.
+Intinya setahu saya, padding itu jarak antara elemen dengan konten si elemen. Lalu untuk margin adalah jarak antara elemen dengan elemen-elemen lain di luarnya.
+### <samp> 4️⃣ Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+Perbedaan antara keduanya adalah kepraktisannya dalam mendesign. Bootstrap menyediakan banyak komponen tinggal pakai yang cocok untuk pemula dan yang tidak mau ribet, misal card. Tailwind memberi kelonggaran pada web developer untuk lebih mendesign sendiri dan membuat sendiri komponen-komponennya, jadi tailwind lebih unggul dalam flexibilitas design.
+### <samp> 5️⃣ Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+✅ Kustomisasi desain pada templat HTML yang telah dibuat pada Tugas 4 dengan menggunakan CSS atau CSS framework (seperti Bootstrap, Tailwind, Bulma) dengan ketentuan sebagai berikut
+<br>
+    ~~ Saya menggunakan framework Tailwind, sehingga pertama-tama yang dilakukan adalah menginstall package django-tailwind dengan ```python -m pip install django-tailwind```. Lalu 
+<br>
+✅ Kustomisasi halaman login, register, dan tambah inventori semenarik mungkin.
+<br>
+    ~~ Untuk warna dominan dari designnya, saya memilih warna pink muda yang code hex nya #FDEAED. Lalu setelah menentukan warna dominan, saya mulai mendesign formnya dengan membuat form ada di tengah-tengah page dan juga mewarnainya. Karena memakai tailwind, saya membaca-baca dokumentasi tailwind di https://v2.tailwindcss.com/docs untuk membantu saya menggunakan tailwind. Dengan menambahkan class di tiap tag yang ingin saya atur designnya, saya dapat menyelesaikan tugas ini. 
+<br>
+✅ Kustomisasi halaman daftar inventori menjadi lebih berwarna maupun menggunakan apporach lain seperti menggunakan Card.
+<br>
+    ~~ Untuk halaman daftar inventori, saya menambahkkan navbar dan juga mengganti penampilan item menjadi cards. Saya juga menerapkan transisi background, jadi saya masih menggunakan internal css juga untuk membantu mempermudah transisinya. Lalu saya juga menggunakan script untuk transisinya.
+<br>
+✅ Menjawab beberapa pertanyaan berikut pada README.md pada root folder (silakan modifikasi README.md yang telah kamu buat sebelumnya; tambahkan subjudul untuk setiap tugas).
+<br>
+    Inilah readme saya yeay🥳
+<br>
+</details>
