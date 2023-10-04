@@ -197,7 +197,7 @@ Selector pada CSS bermanfaat untuk memilih elemen yang ingin diatur designnya. A
   color: blue;
 } ```
 ### <samp> 2️⃣ Jelaskan HTML5 Tag yang kamu ketahui.
-HTML5 Tag setahu saya ada banyak sekali, seperti pada HTML-HTML sebelumnya, tag yang sering dipakai yaitu <p> untuk teks paragraf, <h1> <h2> dst untuk header seperti judul atau subjudul, <li> untuk list, <ol> untuk ordered list, <ul> untuk unorderd list, <a> untuk hyperlink, dan masih banyak lagi.
+HTML5 Tag setahu saya ada banyak sekali, seperti pada HTML-HTML sebelumnya, tag yang sering dipakai yaitu ```<p>``` untuk teks paragraf, ```<h1> <h2>``` dst untuk header seperti judul atau subjudul, <li> untuk list, <ol> untuk ordered list, <ul> untuk unorderd list, <a> untuk hyperlink, dan masih banyak lagi.
 Lalu, di HTML5 ditambah tag-tag baru yang berguna untuk semantik dan multimedia. Tag semantik ini dimaaksudkan agar struktur HTML lebih jelas, mudah dibaca, dan bermakna, sehingga ketika website kita muncul pada browser, akan mudah diidentifikasi yang mana judul website kita, yang mana konten-konten website kita, bahkan diidentifikasi mana kkonten yang merupakan inti website, mana yang tidak terlalu berhubungan, sehingg mudah diolah datanya untuk keperluan data annalyst dan banyak lainnya. Lalu untuk tag multimedia, HTML5 mempermudah penggunaan berbagai media dengan adanya tag-tag baru ini. Berikut adalah tag-tag baru di HTML5:
 | TAG  | DESKRIPSI |
 | ------------- | ------------- |
