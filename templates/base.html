@@ -7,8 +7,33 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0"
         />
-        {% block meta %}
-        {% endblock meta %}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link href="{% static 'static/css/output.css' %}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <!-- <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Noto Sans Mono", "monospace"],
+            },
+          },
+        },
+      };
+    </script> -->
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+      }
+    </style>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="{% static 'js/flip-card.js' %}"></script>
+        {% block meta %}{% endblock meta %}
     </head>
 
     <body>

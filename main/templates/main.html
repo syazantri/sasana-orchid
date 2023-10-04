@@ -1,63 +1,129 @@
-<header>
-    <h1>🌸Sasana Orchid Nursery✨</h1>
-</header>
+{% extends 'base.html' %}
+{% load static %}
 
-<h3>App Name:</h3>
-<p>main</p>
-<h3>Name:</h3>
-<p>{{ name }}</p>
-<h3>Class:</h3>
-<p>{{ class }}</p>
+{% block meta %}
+    <title>Sasana Orchid</title>
+    <link rel = "icon" href = 
+    "static/image/icon-sasana.png" 
+        type = "image/x-icon">
+{% endblock meta %}
+
+{% block content %}
+<style>
+    body {
+        background-color: #FDEAED;
+        transition: background-color 0.5s;
+    }
+    .white-background {
+        background-color: white;
+        transition: background-color 0.5s;
+    }
+    .page-container {
+        padding: 20px;
+    }
+    .card-bg-white .bg-card {
+        background-color: white;
+    }
+    .card-bg-pink .bg-card {
+        background-color: #FDEAED;
+    }
+</style>
+
+<nav style="background-color: #FDEAED;" class="border-gray-200 dark:bg-gray-900">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <div class="flex md:order-2">
+      <div class="relative hidden md:block">
+        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+          <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+          </svg>
+          <span class="sr-only">Search icon</span>
+        </div>
+        <input type="text" id="search-navbar" class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-pink-500 focus:border-pink-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search a product...">
+      </div>
+    </div>
+        <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:border-gray-700">
+          <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-pink-600 rounded md:bg-transparent md:text-pink-600 md:p-0" aria-current="page">Hi, {{ name }}</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-pink-800 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-pink-600 md:p-0 ">PBP D</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-pink-800 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-pink-600 md:p-0 ">Main</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-pink-800 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-pink-600 md:p-0 ">Home</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+<div class="pink-background">
+    <h1 class="text-6xl font-bold text-center text-pink-900 py-20">SASANA ORCHID</h1>
+</div>
 
 {% if last_item %}
+<div class="page-container">
 <h3> Kamu telah menambah stok {{ last_item.name }} sebanyak {{ last_item.amount }} pada toko!😊</h3>
+</div>
 {% endif %} 
 
-<table border='1'>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Amount</th>
-            <th>Price</th>
-            <th>Description</th>
-            <th>Delete</th>
-        </tr>
-    </thead>
-    <tbody>
+<div class="page-container">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {% for item in items %}
-        <tr>
-            <td>{{ item.name }}</td>
-            <td>
-                <a href="{% url 'main:dec_amount' item.id %}">
-                    <button>-</button>
-                </a>
-                <span id="amount-{{ item.id }}">{{ item.amount }}</span>
-                <a href="{% url 'main:inc_amount' item.id %}">
-                    <button>+</button>
-                </a>
-            </td>
-            <td>{{ item.price }}</td>
-            <td>{{ item.description }}</td>
-            <td>
-                <a href="{% url 'main:delete_item' item.id %}">
-                    <button>Delete</button>
-                </a>
-            </td>
-        </tr>
+        <div class="bg-white rounded-lg shadow-md p-4 {% if forloop.last %}bg-yellow-100{% else %}bg-card{% endif %}">
+            <h2 class="text-xl font-semibold">{{ item.name }}</h2>
+            <p class="text-gray-600">{{ item.description }}</p>
+            <div class="flex items-center justify-between mt-4">
+                <p class="text-orange-400 font-semibold">Price: Rp{{ item.price }}</p>
+                <div class="flex items-center space-x-2">
+                    <a href="{% url 'main:dec_amount' item.id %}" class="text-red-500">
+                        <button class="bg-red-100 hover:bg-red-200 text-red-500 px-2 py-1 rounded-full">-</button>
+                    </a>
+                    <span id="amount-{{ item.id }}" class="font-semibold">{{ item.amount }}</span>
+                    <a href="{% url 'main:inc_amount' item.id %}" class="text-green-500">
+                        <button class="bg-green-100 hover:bg-green-200 text-green-500 px-2 py-1 rounded-full">+</button>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-2">
+                <a href="{% url 'main:delete_item' item.id %}" class="text-red-500 hover:underline">Delete</a>
+            </div>
+        </div>
         {% endfor %}
-    </tbody>
-</table>
+    </div>
+</div>
 
+
+<div class="page-container">
 <h5>Sesi terakhir login: {{ last_login }}</h5>
 
-<a href="{% url 'main:create_item' %}">
-    <button>
-        Add New Item
-    </button>
+<a href="{% url 'main:create_item' %}" class="mt-4 block">
+    <button class="bg-pink-700 hover:bg-pink-400 text-white font-semibold px-4 py-2 rounded-full">Add New Item</button>
 </a>
 
-<a href="{% url 'main:logout_user' %}">
-    <button>
-        Logout
-    </button>
+<a href="{% url 'main:logout_user' %}" class="mt-2 block">
+    <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold px-4 py-2 rounded-full">Logout</button>
 </a>
+<div class="page-container">
+
+<script>
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 0) {
+            document.body.classList.add('white-background');
+            document.querySelectorAll('.bg-card').forEach(function(el) {
+                el.classList.add('card-bg-pink');
+                el.classList.remove('card-bg-white');
+            });
+        } else {
+            document.body.classList.remove('white-background');
+            document.querySelectorAll('.bg-card').forEach(function(el) {
+                el.classList.add('card-bg-white');
+                el.classList.remove('card-bg-pink');
+            });
+        }
+    });
+</script>
+{% endblock content %}

@@ -5,41 +5,31 @@
 {% endblock meta %}
 
 {% block content %}
-
-<div class = "login">
-
-    <h1>Login</h1>
-
-    <form method="POST" action="">
-        {% csrf_token %}
-        <table>
-            <tr>
-                <td>Username: </td>
-                <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
-            </tr>
-                    
-            <tr>
-                <td>Password: </td>
-                <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
-            </tr>
-
-            <tr>
-                <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
-            </tr>
-        </table>
-    </form>
-
-    {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}     
-        
-    Don't have an account yet? <a href="{% url 'main:register' %}">Register Now</a>
-
+<div style="background-color: #FDEAED;" class="min-h-screen flex items-center justify-center bg-FDEAED">
+    <div class="bg-white shadow-md rounded p-8 max-w-md">
+        <h1 class="text-2xl font-bold mb-4">Login to Sasana Orchid</h1>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <div class="mb-4">
+                <label for="username" class="block text-gray-700">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Username" class="form-input">
+            </div>
+            <div class="mb-4">
+                <label for="password" class="block text-gray-700">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Password" class="form-input">
+            </div>
+            <div class="mb-4">
+                <input class="bg-pink-500 hover:bg-pink-600 text-white font-semibold px-4 py-2 rounded-full" type="submit" value="Login">
+            </div>
+        </form>
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}     
+        <p>Don't have an account yet? <a href="{% url 'main:register' %}" class="text-pink-500">Register Now</a></p>
+    </div>
 </div>
-
 {% endblock content %}

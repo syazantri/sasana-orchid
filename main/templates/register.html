@@ -4,31 +4,24 @@
     <title>Register</title>
 {% endblock meta %}
 
-{% block content %}  
-
-<div class = "login">
-    
-    <h1>Register</h1>  
-
-        <form method="POST" >  
-            {% csrf_token %}  
-            <table>  
-                {{ form.as_table }}  
-                <tr>  
-                    <td></td>
-                    <td><input type="submit" name="submit" value="Daftar"/></td>  
-                </tr>  
-            </table>  
+{% block content %}
+<div style="background-color: #FDEAED;" class="min-h-screen flex items-center justify-center bg-FDEAED">
+    <div class="bg-white p-8 rounded-lg shadow-md">
+        <h1 class="text-2xl font-bold mb-4 text-pink-700">Register</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="mb-4">
+                <input class="bg-pink-500 hover:bg-pink-600 text-white font-semibold px-4 py-2 rounded-full" type="submit" name="submit" value="Daftar"/>
+            </div>
         </form>
-
-    {% if messages %}  
-        <ul>   
-            {% for message in messages %}  
-                <li>{{ message }}</li>  
-                {% endfor %}  
-        </ul>   
-    {% endif %}
-
-</div>  
-
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</div>
 {% endblock content %}
