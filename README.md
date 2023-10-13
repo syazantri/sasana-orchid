@@ -188,3 +188,59 @@ Untuk menampilkan detail informasi pengguna sesuai yang lagi log in, itu ubah aj
 Inilah readme saya yeay🥳
 <br>
 </details>
+
+<details>
+    <summary>Tugas 5</summary>
+    
+### <samp> 1️⃣ Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
+Selector pada CSS bermanfaat untuk memilih elemen yang ingin diatur designnya. Ada bermacam-macam contoh element selector css, disesuaikan dengan nama elemen nya, misal p untuk paragraf, h1, h2 untuk header dll. Element selector ini cocok digunakan ketika kita ingin menyeragamkan design suatu elemen. Misal kita ingin semua paragraf warnanya biru, berarti kita element selector p saja seperti ini ``` p {
+  color: blue;
+} ```
+### <samp> 2️⃣ Jelaskan HTML5 Tag yang kamu ketahui.
+HTML5 Tag setahu saya ada banyak sekali, seperti pada HTML-HTML sebelumnya, tag yang sering dipakai yaitu ```<p>``` untuk teks paragraf, ```<h1> <h2>``` dst untuk header seperti judul atau subjudul, ```<li>``` untuk list, ```<ol>``` untuk ordered list, <ul> untuk unorderd list, ```<a>``` untuk hyperlink, dan masih banyak lagi.
+Lalu, di HTML5 ditambah tag-tag baru yang berguna untuk semantik dan multimedia. Tag semantik ini dimaaksudkan agar struktur HTML lebih jelas, mudah dibaca, dan bermakna, sehingga ketika website kita muncul pada browser, akan mudah diidentifikasi yang mana judul website kita, yang mana konten-konten website kita, bahkan diidentifikasi mana kkonten yang merupakan inti website, mana yang tidak terlalu berhubungan, sehingg mudah diolah datanya untuk keperluan data annalyst dan banyak lainnya. Lalu untuk tag multimedia, HTML5 mempermudah penggunaan berbagai media dengan adanya tag-tag baru ini. Berikut adalah tag-tag baru di HTML5 yang saya ketahui setelah membaca artikel dari tutorialspoint:
+| TAG  | DESKRIPSI |
+| ------------- | ------------- |
+| ```<article>``` | untuk konten website yang sifatnya independen |
+| ```<aside>```| konten yang tidak terlalu berkaitan dengan konten lainnya di web |
+| ```<audio>``` | untuk menaruh file audio|
+| ```<canvas>``` | untuk merender bitmap grafik misal untuk games |
+| ```<command>``` | command yang bisa user invoke |
+| ```<datalist>``` | bisa untuk membuat combobox |
+| ```<details>``` | detail yang user dapatkan hanya jika diinginkan |
+| ```<embed>``` | file atau konten eksternal yang interaktif |
+| ```<figure>``` | unit tunggal komponen utama web |
+| ```<footer>``` | bagian paling bawah website |
+| ```<header>``` | bagian awal pengenalan web |
+| ```<hgroup>``` | header-headernya section |
+| ```<keygen>``` | representasi kontrol key generator |
+| ```<mark>``` | untuk menandakan suatu konten |
+| ```<meter>``` | untuk hasil misalnya hasil perhitungan scripting|
+| ```<nav>``` | representasi section-section untuk navigasi, biasanya berada di paling atas suatu web |
+| ```<progress>``` | progres dari suatu proses misal downloading |
+| ```<ruby>``` | menandai penulisan ruby |
+| ```<section>``` | bagian dokumen secara umum |
+| ```<time>``` | waktu atau tanggal |
+| ```~<wbr>``` | merepresentasikan kemungkinan line break |
+### <samp> 3️⃣ Jelaskan perbedaan antara margin dan padding.
+Intinya setahu saya, padding itu jarak antara elemen dengan konten si elemen. Lalu untuk margin adalah jarak antara elemen dengan elemen-elemen lain di luarnya.
+### <samp> 4️⃣ Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+Perbedaan antara keduanya adalah kepraktisannya dalam mendesign. Bootstrap menyediakan banyak komponen tinggal pakai yang cocok untuk pemula dan yang tidak mau ribet, misal card. Tailwind memberi kelonggaran pada web developer untuk lebih mendesign sendiri dan membuat sendiri komponen-komponennya, jadi tailwind lebih unggul dalam flexibilitas design.
+### <samp> 5️⃣ Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+✅ Kustomisasi desain pada templat HTML yang telah dibuat pada Tugas 4 dengan menggunakan CSS atau CSS framework (seperti Bootstrap, Tailwind, Bulma) dengan ketentuan sebagai berikut
+<br>
+    ~~ Saya menggunakan framework Tailwind, sehingga pertama-tama yang dilakukan adalah menginstall package django-tailwind dengan ```python -m pip install django-tailwind```. Lalu membuat file tailwind.config.js dengan command ```npx tailwindcss init```, lalu membuat file static isi style.css yang diisi kode mengimpor tailwind css, dan buat file output.css juga, lalu compile tailwind.
+<br>
+✅ Kustomisasi halaman login, register, dan tambah inventori semenarik mungkin.
+<br>
+    ~~ Untuk warna dominan dari designnya, saya memilih warna pink muda yang code hex nya #FDEAED. Lalu setelah menentukan warna dominan, saya mulai mendesign formnya dengan membuat form ada di tengah-tengah page dan juga mewarnainya. Karena memakai tailwind, saya membaca-baca dokumentasi tailwind di https://v2.tailwindcss.com/docs untuk membantu saya menggunakan tailwind. Dengan menambahkan class di tiap tag yang ingin saya atur designnya, saya dapat menyelesaikan tugas ini. 
+<br>
+✅ Kustomisasi halaman daftar inventori menjadi lebih berwarna maupun menggunakan apporach lain seperti menggunakan Card.
+<br>
+    ~~ Untuk halaman daftar inventori, saya menambahkkan navbar dan juga mengganti penampilan item menjadi cards. Saya juga menerapkan transisi background, jadi saya masih menggunakan internal css juga untuk membantu mempermudah transisinya. Lalu saya juga menggunakan script untuk transisinya.
+<br>
+✅ Menjawab beberapa pertanyaan berikut pada README.md pada root folder (silakan modifikasi README.md yang telah kamu buat sebelumnya; tambahkan subjudul untuk setiap tugas).
+<br>
+    Inilah readme saya yeay🥳
+<br>
+</details>
