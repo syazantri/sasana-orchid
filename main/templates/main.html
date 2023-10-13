@@ -6,6 +6,8 @@
     <link rel = "icon" href = 
     "static/image/icon-sasana.png" 
         type = "image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 {% endblock meta %}
 
 {% block content %}
@@ -27,6 +29,19 @@
     .card-bg-pink .bg-card {
         background-color: #FDEAED;
     }
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust as needed */
+        gap: 20px;
+        padding: 20px;
+    }
+    .card {
+        background-color: white;
+        border-radius: 20px; /* Adjust the radius as needed */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+    
 </style>
 
 <nav style="background-color: #FDEAED;" class="border-gray-200 dark:bg-gray-900">
@@ -70,32 +85,45 @@
 </div>
 {% endif %} 
 
-<div class="page-container">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {% for item in items %}
-        <div class="bg-white rounded-lg shadow-md p-4 {% if forloop.last %}bg-yellow-100{% else %}bg-card{% endif %}">
-            <h2 class="text-xl font-semibold">{{ item.name }}</h2>
-            <p class="text-gray-600">{{ item.description }}</p>
-            <div class="flex items-center justify-between mt-4">
-                <p class="text-orange-400 font-semibold">Price: Rp{{ item.price }}</p>
-                <div class="flex items-center space-x-2">
-                    <a href="{% url 'main:dec_amount' item.id %}" class="text-red-500">
-                        <button class="bg-red-100 hover:bg-red-200 text-red-500 px-2 py-1 rounded-full">-</button>
-                    </a>
-                    <span id="amount-{{ item.id }}" class="font-semibold">{{ item.amount }}</span>
-                    <a href="{% url 'main:inc_amount' item.id %}" class="text-green-500">
-                        <button class="bg-green-100 hover:bg-green-200 text-green-500 px-2 py-1 rounded-full">+</button>
-                    </a>
-                </div>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Product</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="mt-2">
-                <a href="{% url 'main:delete_item' item.id %}" class="text-red-500 hover:underline">Delete</a>
+            <div class="modal-body">
+                <form id="form" onsubmit="return false;">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="col-form-label">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="amount" class="col-form-label">Amount:</label>
+                        <input type="text" class="form-control" id="amount" name="amount"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="col-form-label">Price:</label>
+                        <input type="number" class="form-control" id="price" name="price"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="col-form-label">Description:</label>
+                        <textarea class="form-control" id="description" name="description"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Product</button>
             </div>
         </div>
-        {% endfor %}
     </div>
 </div>
 
+<div id="card_id"> </div>
+
+<img src="{% static 'image/logo-navbar-sasana.png' %}" alt "tes">
 
 <div class="page-container">
 <h5>Sesi terakhir login: {{ last_login }}</h5>
@@ -104,26 +132,66 @@
     <button class="bg-pink-700 hover:bg-pink-400 text-white font-semibold px-4 py-2 rounded-full">Add New Item</button>
 </a>
 
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Item by AJAX</button>
+
 <a href="{% url 'main:logout_user' %}" class="mt-2 block">
     <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold px-4 py-2 rounded-full">Logout</button>
 </a>
 <div class="page-container">
 
 <script>
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 0) {
-            document.body.classList.add('white-background');
-            document.querySelectorAll('.bg-card').forEach(function(el) {
-                el.classList.add('card-bg-pink');
-                el.classList.remove('card-bg-white');
-            });
-        } else {
-            document.body.classList.remove('white-background');
-            document.querySelectorAll('.bg-card').forEach(function(el) {
-                el.classList.add('card-bg-white');
-                el.classList.remove('card-bg-pink');
-            });
-        }
-    });
+    async function getItems() {
+        return fetch("{% url 'main:get_item_json' %}").then((res) => res.json())
+    }
+
+    async function refreshItems() {
+        const items = await getItems();
+        const cardContainer = document.getElementById("card_id");
+
+        // Clear the existing content
+        cardContainer.innerHTML = '';
+
+        items.forEach(item => {
+        // Create a card element
+            const card = document.createElement('div');
+            card.className = "card"; // Use the new CSS class for cards
+
+            const name = document.createElement('h2');
+            name.className = "text-xl font-semibold";
+            name.innerText = item.fields.name;
+
+            const amount = document.createElement('p');
+            amount.className = "text-orange-400 font-semibold";
+            amount.innerText = `item.fields.amount`;
+
+            const price = document.createElement('p');
+            price.className = "text-orange-400 font-semibold";
+            price.innerText = `Price: Rp${item.fields.price}`;
+
+            const description = document.createElement('p');
+            description.className = "text-gray-600";
+            description.innerText = item.fields.description;
+
+            card.appendChild(name);
+            card.appendChild(amount);
+            card.appendChild(price);
+            card.appendChild(description);
+
+            cardContainer.appendChild(card);
+        });
+    }
+    refreshItems();
+
+    function addItem() {
+        fetch("{% url 'main:add_item_ajax' %}", {
+            method: "POST",
+            body: new FormData(document.querySelector('#form'))
+        }).then(refreshItems)
+
+        document.getElementById("form").reset()
+        return false
+    }
+
+    document.getElementById("button_add").onclick = addItem
 </script>
 {% endblock content %}
