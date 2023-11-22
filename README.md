@@ -1,7 +1,7 @@
 # Sasana Orchid  \\(^-^)/ 🌸
 
-## 🔗 Link Adaptable 🔗
-https://sasana-orchid.adaptable.app/
+## 🔗 Link Website 🔗
+https://syazantri-salsabila-tugas.pbp.cs.ui.ac.id
 
 <details>
     <summary>Tugas 2</summary>
@@ -242,5 +242,74 @@ Perbedaan antara keduanya adalah kepraktisannya dalam mendesign. Bootstrap menye
 ✅ Menjawab beberapa pertanyaan berikut pada README.md pada root folder (silakan modifikasi README.md yang telah kamu buat sebelumnya; tambahkan subjudul untuk setiap tugas).
 <br>
     Inilah readme saya yeay🥳
+<br>
+</details>
+
+<details>
+    <summary>Tugas 6</summary>
+    
+### <samp> 1️⃣ Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
+Synchronous web communication yaitu ketika pengguna ingin melakukan suatu event, harus menyelesaikan atau menunggu response event sebelumnya dulu. 
+Sementara itu, untuk asynchronous web communication, pengguna dapat melakukan beberapa event sekaligus meskipun sedang menunggu response.
+### <samp> 2️⃣ Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+Event-driven progamming adalah eksekusi program yang ditentukan berdasarkan action yang dilakukan user, seperti click, drag, keypress, dsb. Salah satu contohnya pada tugas ini adalah button add item by ajax yang memiliki atribut data-bs-toggle dan data-bs-target, yang akan memicu event ketika tombol diklik dengan ```document.getElementById("button_add").onclick = addItem```
+### <samp> 3️⃣ Jelaskan penerapan asynchronous programming pada AJAX.
+AJAX melakukan penerapan async programming bisa dengan mendefinisikan callback functions atau menggunakan konsep Promises atau async/await. Atau dengan menambah async di depan function untuk membuat function tersebut async, lalu function dengan parameter callback untuk menandakan caallback function, lalu keyword await untuk  memberi tahu program harus menunggu hingga operasi asinkron yang sebelumnya selesai sebelum melanjutkan eksekusi.
+### <samp> 4️⃣ Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.
+1. Kelebihan
+| Fetch API | Library jQuery |
+| ------------- | ------------- |
+| Lebih modern, sudah built-iin, tidak memerlukan library external | Lebih mudah digunakan karena bisa membedakan implementasi browser dan request ajax |
+| Ada Promises yang membuat request async jadi lebiih mudah dibacaa | Dokumentasinya lengkap |
+| Lebih ringan dari jQuery, jadi bisa mengrangi overload | Compaatible di banyak web browser seperti IE |
+2. Kekurangan
+| Fetch API | Library jQuery |
+| ------------- | ------------- |
+| Dokumentasinya masih kurang jika dibandingkan dengan jQuery | Librarynya besar banget jadi kalau penggunaannya berlebihan bisa overhead |
+| Tidak tersedia pada Internet Explorer | Kurang modern |
+### <samp> 5️⃣ Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+✅ Ubahlah kode cards data item agar dapat mendukung AJAX GET.
+<br>
+    ~~ Code html yang sudah sibuat untuk cards dihapus, lalu ganti jadi semacam wrapper card yang id nya nanti dipakai untuk membuat card dari script (```<div id="card_id"> </div>```)
+<br>
+✅ Lakukan pengambilan task menggunakan AJAX GET.
+<br>
+    ~~ Buat fungsi pada views yaitu ```get_item_json```, lalu add path functionnya ke urls.py, lalu buat ```async function getItems()``` di script di main.html untuk fetch data item.
+<br>
+✅ Buatlah sebuah tombol yang membuka sebuah modal dengan form untuk menambahkan item.
+<br>
+    ~~ Buat button dengan data-bs-toggle="modal" data-bs-target="#exampleModal" untuk menghubungkannyaa ke modal form.
+<br>
+✅ Buatlah fungsi view baru untuk menambahkan item baru ke dalam basis data.
+<br>
+    ~~ Buat fungsi pada views yaitu ```add_item_ajax``` yang akan menggunakan POST untuk menambahkan item
+<br>
+✅ Buatlah path /create-ajax/ yang mengarah ke fungsi view yang baru kamu buat.
+<br>
+    ~~ Daftarkan fungsi ```add_item_ajax``` ke path /create-ajax/ padaa urls.py
+<br>
+✅ Hubungkan form yang telah kamu buat di dalam modal kamu ke path /create-ajax/.
+<br>
+    ~~ Buat fungsi async ```add_item()``` pada script di html untuk menghubungkannya.
+<br>
+✅ Lakukan refresh pada halaman utama secara asinkronus untuk menampilkan daftar item terbaru tanpa reload halaman utama secara keseluruhan.
+<br>
+    ~~ Buat fungsi async ```refreshItems()``` pada script di html, ambil id yang sudah dibuat unntuk tempat card tadi, lalu buat card nya di situ juga.
+<br>
+✅ Melakukan perintah collectstatic.
+<br>
+    ~~ Buat foolder static, isinya ada folder image juga, buat taruh file-file static seperti gambar, lalu jalankan command collectstatic ```python manage.py collectstatic``` 
+<br>
+✅ Menjawab beberapa pertanyaan berikut pada README.md
+<br>
+    ~~ Inilah readme saya yeay🥳
+<br>
+✅ Melakukan add-commit-push ke GitHub.
+<br>
+    ~~ ```git add .```, ```git commit -m "done tugas 6"```, ```git push```
+<br>
+✅ Melakukan deployment ke PaaS PBP Fasilkom UI dan sertakan tautan aplikasi pada file README.md.
+<br>
+    ~~ Menambahkan ```django-environ``` ke requirements.txt, membuat file Procfile dan Dockerfile yang isinya seperti di tutorial 2, membuat folder .github lalu folder workflows di dalamnya lalu buat file pbp-deploy.yml yang isinya seperti di tutorial 2 tetapi main diganti master karena branch utama saya adalah master. Lalu ke repo sasana-orchid di github lalu ke settings, ke Secrets and variables lalu ke actions, tambahkan repository secret sesuai instruksi di tutorial 2.
 <br>
 </details>
