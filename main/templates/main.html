@@ -85,7 +85,7 @@
 </div>
 {% endif %} 
 
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -122,6 +122,34 @@
 </div>
 
 <div id="card_id"> </div>
+
+<div class="page-container">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {% for item in items %}
+        <div class="bg-white rounded-lg shadow-md p-4 {% if forloop.last %}bg-yellow-100{% else %}bg-card{% endif %}">
+            <h2 class="text-xl font-semibold">{{ item.name }}</h2>
+            <p class="text-gray-600">{{ item.description }}</p>
+            <div class="flex items-center justify-between mt-4">
+                <p class="text-orange-400 font-semibold">Price: Rp{{ item.price }}</p>
+                <div class="flex items-center space-x-2">
+                    <a href="{% url 'main:dec_amount' item.id %}" class="text-red-500">
+                        <button class="bg-red-100 hover:bg-red-200 text-red-500 px-2 py-1 rounded-full">-</button>
+                    </a>
+                    <span id="amount-{{ item.id }}" class="font-semibold">{{ item.amount }}</span>
+                    <a href="{% url 'main:inc_amount' item.id %}" class="text-green-500">
+                        <button class="bg-green-100 hover:bg-green-200 text-green-500 px-2 py-1 rounded-full">+</button>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-2">
+                <a href="{% url 'main:delete_item' item.id %}" class="text-red-500 hover:underline">Delete</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+  
 
 <img src="{% static 'image/logo-navbar-sasana.png' %}" alt "tes">
 
@@ -177,21 +205,27 @@
             card.appendChild(price);
             card.appendChild(description);
 
+            const addButton = document.createElement('button');
+            addButton.className = "btn btn-success";
+            addButton.innerText = "+";
+            addButton.onclick = () => incAmount(item.pk); 
+
+            const minusButton = document.createElement('button');
+            minusButton.className = "btn btn-danger";
+            minusButton.innerText = "-";
+            minusButton.onclick = () => decAmount(item.id); 
+
+            const deleteButton = document.createElement('button');
+            deleteButton.className = "btn btn-warning";
+            deleteButton.innerText = "Delete";
+            deleteButton.onclick = () => deleteItem(item.pk);
+
             cardContainer.appendChild(card);
         });
     }
     refreshItems();
 
-    function addItem() {
-        fetch("{% url 'main:add_item_ajax' %}", {
-            method: "POST",
-            body: new FormData(document.querySelector('#form'))
-        }).then(refreshItems)
-
-        document.getElementById("form").reset()
-        return false
-    }
-
     document.getElementById("button_add").onclick = addItem
 </script>
+
 {% endblock content %}

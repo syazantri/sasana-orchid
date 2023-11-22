@@ -1,0 +1,141 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Product</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="form" onsubmit="return false;">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="col-form-label">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="amount" class="col-form-label">Amount:</label>
+                        <input type="text" class="form-control" id="amount" name="amount"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="col-form-label">Price:</label>
+                        <input type="number" class="form-control" id="price" name="price"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="col-form-label">Description:</label>
+                        <textarea class="form-control" id="description" name="description"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Product</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="card_id"> </div>
+<!-- <script>
+    async function getItems() {
+        return fetch("{% url 'main:get_item_json' %}").then((res) => res.json())
+    }
+
+    async function refreshItems() {
+        const items = await getItems();
+        const cardContainer = document.getElementById("card_id");
+
+        // Clear the existing content
+        cardContainer.innerHTML = '';
+
+        items.forEach(item => {
+        // Create a card element
+            const card = document.createElement('div');
+            card.className = "card"; // Use the new CSS class for cards
+
+            const name = document.createElement('h2');
+            name.className = "text-xl font-semibold";
+            name.innerText = item.fields.name;
+
+            const amount = document.createElement('p');
+            amount.className = "text-orange-400 font-semibold";
+            amount.innerText = `item.fields.amount`;
+
+            const price = document.createElement('p');
+            price.className = "text-orange-400 font-semibold";
+            price.innerText = `Price: Rp${item.fields.price}`;
+
+            const description = document.createElement('p');
+            description.className = "text-gray-600";
+            description.innerText = item.fields.description;
+
+            card.appendChild(name);
+            card.appendChild(amount);
+            card.appendChild(price);
+            card.appendChild(description);
+
+            const addButton = document.createElement('button');
+            addButton.className = "btn btn-success";
+            addButton.innerText = "+";
+            addButton.onclick = () => incAmount(item.pk); 
+
+            const minusButton = document.createElement('button');
+            minusButton.className = "btn btn-danger";
+            minusButton.innerText = "-";
+            minusButton.onclick = () => decAmount(item.id); 
+
+            const deleteButton = document.createElement('button');
+            deleteButton.className = "btn btn-warning";
+            deleteButton.innerText = "Delete";
+            deleteButton.onclick = () => deleteItem(item.pk);
+
+            cardContainer.appendChild(card);
+        });
+    }
+    refreshItems();
+
+    function deleteItem(itemId) {
+        fetch(`{% url 'main:delete_item' itemId %}`, {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': getCookie('csrftoken'), 
+            },
+        }).then(refreshItems);
+    }
+
+    function incAmount(itemId) {
+        fetch(`{% url 'main:inc_amount' item.id %}`, {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': getCookie('csrftoken'), 
+            },
+        }).then(refreshItems);
+    }
+
+    function decAmount(itemId) {
+        fetch(`{% url 'main:dec_amount' item.id %}`, {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': getCookie('csrftoken'), 
+            },
+        }).then(refreshItems);
+    }
+
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+
+    function addItem() {
+        fetch("{% url 'main:add_item_ajax' %}", {
+            method: "POST",
+            body: new FormData(document.querySelector('#form'))
+        }).then(refreshItems)
+
+        document.getElementById("form").reset()
+        return false
+    }
+
+    document.getElementById("button_add").onclick = addItem
+</script> -->
+
