@@ -26,7 +26,6 @@ def show_main(request):
         'class': 'PBP D',
         'items': items,
         'last_item': last_item,
-        'last_login': request.COOKIES['last_login'],
     }
 
     return render(request, "main.html", context)
@@ -34,7 +33,6 @@ def show_main(request):
 def logout_user(request):
     logout(request)
     response = HttpResponseRedirect(reverse('main:login_user'))
-    response.delete_cookie('last_login')
     return response
 
 def login_user(request):
@@ -45,7 +43,6 @@ def login_user(request):
         if user is not None:
             login(request, user)
             response = HttpResponseRedirect(reverse("main:show_main")) 
-            response.set_cookie('last_login', str(datetime.datetime.now()))
             return response
         else:
             messages.info(request, 'Sorry, incorrect username or password. Please try again.')
